@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> View My Posts</title>
+        <link rel="stylesheet" href="css/search.css">
+        <style>
+        
+        .button {
+            border: 1px solid #172f3d;
+            background: #ffffff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#8ff7d3), to(#ffffff));
+            background: -webkit-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -moz-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -ms-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -o-linear-gradient(top, #8ff7d3, #ffffff);
+            background-image: -ms-linear-gradient(top, #8ff7d3 0%, #ffffff 100%);
+            padding: 7px 14px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            text-shadow: #4a94c2 0 1px 0;
+            color: #030000;
+            font-size: 15px;
+            font-family: helvetica, serif;
+            text-decoration: none;
+            vertical-align: middle;
+            }
+         .button:hover {
+            border: 1px solid #0a3c59;
+            text-shadow: #1e4158 0 1px 0;
+            background: #cddfeb;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d8eefc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -moz-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -ms-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -o-linear-gradient(top, #d8eefc, #cddfeb);
+            background-image: -ms-linear-gradient(top, #d8eefc 0%, #cddfeb 100%);
+            color: #000000;
+            }
+         .button:active {
+            text-shadow: #1e4158 0 1px 0;
+            border: 1px solid #0a3c59;
+            background: #edf6fc;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -moz-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -ms-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -o-linear-gradient(top, #fcfcfc, #edf6fc);
+            background-image: -ms-linear-gradient(top, #fcfcfc 0%, #edf6fc 100%);
+            color: #0d000d;
+            }
+            .button{
+                font-family:fantasy;
+            }
+
+                
+.effect {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* 불필요한 부분 가리기 */
+    padding: 6px; /* 6px정도 이미지 밖으로 표현 */
+}
+.effect img {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.effect:before,
+.effect:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 50px;
+    background: #fff; /* 배경색과 같은 색 */
+    transform: rotate(-30deg);
+}
+/* 왼쪽 위 */
+.effect:before {
+    box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+    top: -24px;
+    bottom: auto;
+    right: auto;
+    left: -26px;
+
+}
+/* 오른쪽 아래 */
+.effect:after {
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.7);
+    top: auto;
+    bottom: -22px;
+    right: -25px;
+    left: auto;
+}
+.effect {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* 불필요한 부분 가리기 */
+    padding: 6px; /* 6px정도 이미지 밖으로 표현 */
+}
+.effect img {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.effect:before,
+.effect:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 50px;
+    background: #fff; /* 배경색과 같은 색 */
+    transform: rotate(-30deg);
+}
+/* 왼쪽 위 */
+.effect:before {
+    box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+    top: -24px;
+    bottom: auto;
+    right: auto;
+    left: -26px;
+ 
+}
+/* 오른쪽 아래 */
+.effect:after {
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.7);
+    top: auto;
+    bottom: -22px;
+    right: -25px;
+    left: auto;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+.setfollow{
+    display :flex;
+
+}
+.follow{
+    margin-left: 50px;
+}
+
+        </style>
+    </head>
+    
+    <body>
+            <header>
+                    <div class = "A">
+                            <div class= "B">
+                                    <div class="top">
+                                            <img src="images/Nupdoung.jpg" alt=""  class = "image_profile2" style="margin-left : 100px;">
+                                            <img src="images/mark3.jpg" alt=""  class = "image_mark" style="margin-left : 10px;">
+                                        </div>
+                                    <div class="top2" >
+                                            <form method = "post" action="/viewMy">
+                                                <h5><input type = "submit" value = "내 게시글" class="right" name = ""></h5>
+                                            </form>
+                                            <br>
+                                            <form method = "post" action="/viewAll">
+                                                <h5><input type = "submit" value = "전체 게시글" class="right" name = ""></h5>
+                                            </form>
+                                            <br>
+                                            <form method = "post" action="/viewEmotion">
+                                                <h5><input type = "submit" value = "감정과 같은 게시글" class="right" name = ""></h5>
+                                            </form>
+                                            <br>
+                                            <form method = "post" action="/musiclist">
+                                                <h5><input type = "submit" value = "음악 플레이 리스트" class="right" name = ""></h5>
+                                            </form>
+                                            <br>
+                                            <form method = "post" action="/logout">
+                                                <h5><input type = "submit" value = "로그아웃" class="right" name = ""></h5>
+                                            </form>
+                                            <br>
+                                    </div>
+                            </div>
+                            
+                        </div>
+            </header>
+
+            <article>
+                <section>
+                <h1>Profile</h1>
+                <div class = "effect">
+                    <img src=<%= img %>  height = '200' width = '200'>
+                </div>
+                    <h3> Id : <%= id %></h3>
+                    <h3> Name: <%= name %></h3>
+                    <h3> Phone Number: <%= phone %></h3>
+                    <div class="setfollow">
+                        <form method="post" action="/addF" class="follow"> 
+                        <input type = "submit" class = "right2" value="팔로우" name="">
+                    </form>
+                    <form method="post" action="/delF" class="endfollow"> 
+                        <input type = "submit" class = "right2" value="팔로우 끊기" name="">
+                    </form>
+                     </div>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    
+
+
+                    <div class = "image">
+                            <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                            
+                            <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                            
+                            <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                            
+                            
+                    </div>    
+                </section>
+            </article>
+        
+        <aside>
+                <h3></h3>
+                <div class = "text">
+                        <ul>
+                                <li>경기도 수원시 팔달구 영통구 월드컵로 206</li>
+                                <li>집중교육2</li>
+                                <li>기석범, 박주원, 박준민, 이가영</li>
+                            </ul>
+                </div>
+                    
+                </aside>
+                <footer>
+                    <p>Copyright Nupdoung Team of AJou university</p>
+                </footer>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>프로필 페이지</title>
+        <link rel="stylesheet" href="css/viewProfile.css">
+
+        <style>
+        .button {
+            border: 1px solid #172f3d;
+            background: mediumturquoise;
+            background: -webkit-gradient(linear, left top, left bottom, from(#8ff7d3), to(#5ff5cd));
+            background: -webkit-linear-gradient(top, #8ff7d3, #5ff5cd);
+            background: -moz-linear-gradient(top, #8ff7d3, #5ff5cd);
+            background: -ms-linear-gradient(top, #8ff7d3, #5ff5cd);
+            background: -o-linear-gradient(top, #8ff7d3, #5ff5cd);
+            background-image: -ms-linear-gradient(top, #8ff7d3 0%, #5ff5cd 100%);
+            padding: 7px 14px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            text-shadow: mediumturquoise 0 1px 0;
+            color: #030000;
+            font-size: 15px;
+            font-family: helvetica, serif;
+            text-decoration: none;
+            vertical-align: middle;
+            }
+         .button:hover {
+            border: 1px solid #0a3c59;
+            text-shadow: #1e4158 0 1px 0;
+            background: #cddfeb;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d8eefc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -moz-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -ms-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -o-linear-gradient(top, #d8eefc, #cddfeb);
+            background-image: -ms-linear-gradient(top, #d8eefc 0%, #cddfeb 100%);
+            color: #000000;
+            }
+         .button:active {
+            text-shadow: #1e4158 0 1px 0;
+            border: 1px solid #0a3c59;
+            background: #edf6fc;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -moz-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -ms-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -o-linear-gradient(top, #fcfcfc, #edf6fc);
+            background-image: -ms-linear-gradient(top, #fcfcfc 0%, #edf6fc 100%);
+            color: #0d000d;
+            }
+
+
+   .button{
+                font-family:fantasy;
+            }
+
+
+    
+
+.effect img {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.effect:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: rotate(3deg); /* 회전효과 */
+    background: #fff;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+.top{
+    display : flex;
+}
+
+/*파일업로드*/
+
+
+        </style>
+    </head>
+    <body>
+
+            <header>
+                    <ul>
+                        <a href="file:///C:/Users/ajou/Desktop/html/viewProfile.html"><h1><em>Nupdoong</em></h1></a>
+                    </ul>
+            </header>
+
+        <article>
+            <div class="top">
+                <form method = "post" action="/viewMy">
+                    <input type = "submit" value = "내 게시글 보기" class="right" name = "">
+                </form>
+                <br>
+                <form method = "post" action="/viewAll">
+                    <input type = "submit" value = "전체 게시글 보기" class="right" name = "">
+                </form>
+                <br>
+                <form method = "post" action="/viewEmotion">
+                    <input type = "submit" value = "감정과 같은 게시글 보기" class="right" name = "">
+                </form>
+                <br>
+                <form method = "post" action="/friendlist">
+                    <input type = "submit" value = "팔로우 목록 보기" class="right" name = "">
+                </form>
+                <br>
+                <form method = "post" action="/musiclist">
+                    <input type = "submit" value = "음악 플레이 리스트 보기" class="right" name = "">
+                </form>
+                <br>
+                <form method = "post" action="/logout">
+                    <input type = "submit" value = "로그아웃" class="right" name = "">
+                </form>
+                <br>
+            </div>
+            <section>
+
+        <h2><p><%= login_ID%>님의 프로필</p></h2>
+        <dir>    
+        <form method = "post" action="/profile" enctype="multipart/form-data">
+                
+                <table> 
+                    <div >
+                        <img src = <%= profile_img %> height = "200" width = "200">
+                    </div>
+                    <label>프로필 사진 올리기</label>
+                    <br>
+                    <div class = "guide">
+                    <input type = "file"  class="upload" name="photo" />
+                    </div>
+                    <br>
+                    <input type = "submit" value="업로드"  name = ""class="right3">
+                    
+               
+                </table>
+                
+            </form>
+        </dir>
+        <dir>
+                <form method = "post" action="/post" enctype="multipart/form-data">
+                    <table>
+                           <label>게시글 사진 올리기</label>
+                           <br>
+                           <div class = "guide">
+                       <input type = "file" class="upload" name="photo"/>
+                    </div>
+                       <br>
+                       <input type = "submit" value="업로드"  name = "" class="right3">
+                       <img src = <%= post_img %> height = "200" width = "200" >
+                   </table>
+               </form>
+           </dir>
+        </section>
+        <section>
+            
+        <table>
+            
+
+        </table>
+        <table>
+            <br>
+            <form method = "post" action="/search">
+                <h2>친구 찾기</h2>
+            <h3><label>친구의 아이디를 입력하세요.</label></h3>
+            <input type ="txt" name="search_id">
+            <input type = "submit" value = "친구 검색" class="right2" name = "">
+			<div class="help"></div>
+            </form>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class = "image">
+                <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                
+                <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                
+                <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                
+                <img src="images/Nupdoung.jpg" alt="" style ="width : 24%" max-width="260px" >
+                
+        </div>
+           </section>
+        </article>
+
+        <aside>
+            <h3></h3>
+            <div class = "text">
+                    <ul>
+                            <li>경기도 수원시 팔달구 영통구 월드컵로 206</li>
+                            <li>집중교육2</li>
+                            <li>기석범, 박주원, 박준민, 이가영</li>
+                        </ul>
+            </div>
+                
+            </aside>
+            <footer>
+                <p>Copyright Nupdoung Team of AJou university</p>
+            </footer>
+        
+    </body>
+</html>

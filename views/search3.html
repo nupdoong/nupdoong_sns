@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>친구검색 결과</title>
+        <link rel="stylesheet" href="css/search.css">
+        <style>
+        
+        .button {
+            border: 1px solid #172f3d;
+            background: #ffffff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#8ff7d3), to(#ffffff));
+            background: -webkit-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -moz-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -ms-linear-gradient(top, #8ff7d3, #ffffff);
+            background: -o-linear-gradient(top, #8ff7d3, #ffffff);
+            background-image: -ms-linear-gradient(top, #8ff7d3 0%, #ffffff 100%);
+            padding: 7px 14px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+            text-shadow: #4a94c2 0 1px 0;
+            color: #030000;
+            font-size: 15px;
+            font-family: helvetica, serif;
+            text-decoration: none;
+            vertical-align: middle;
+            }
+         .button:hover {
+            border: 1px solid #0a3c59;
+            text-shadow: #1e4158 0 1px 0;
+            background: #cddfeb;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d8eefc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -moz-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -ms-linear-gradient(top, #d8eefc, #cddfeb);
+            background: -o-linear-gradient(top, #d8eefc, #cddfeb);
+            background-image: -ms-linear-gradient(top, #d8eefc 0%, #cddfeb 100%);
+            color: #000000;
+            }
+         .button:active {
+            text-shadow: #1e4158 0 1px 0;
+            border: 1px solid #0a3c59;
+            background: #edf6fc;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cddfeb));
+            background: -webkit-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -moz-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -ms-linear-gradient(top, #fcfcfc, #edf6fc);
+            background: -o-linear-gradient(top, #fcfcfc, #edf6fc);
+            background-image: -ms-linear-gradient(top, #fcfcfc 0%, #edf6fc 100%);
+            color: #0d000d;
+            }
+ 
+                
+.effect {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* 불필요한 부분 가리기 */
+    padding: 6px; /* 6px정도 이미지 밖으로 표현 */
+}
+.effect img {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.effect:before,
+.effect:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 50px;
+    background: #fff; /* 배경색과 같은 색 */
+    transform: rotate(-30deg);
+}
+/* 왼쪽 위 */
+.effect:before {
+    box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+    top: -24px;
+    bottom: auto;
+    right: auto;
+    left: -26px;
+ 
+}
+/* 오른쪽 아래 */
+.effect:after {
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.7);
+    top: auto;
+    bottom: -22px;
+    right: -25px;
+    left: auto;
+}
+.effect {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* 불필요한 부분 가리기 */
+    padding: 6px; /* 6px정도 이미지 밖으로 표현 */
+}
+.effect img {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.effect:before,
+.effect:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 50px;
+    background: #fff; /* 배경색과 같은 색 */
+    transform: rotate(-30deg);
+}
+/* 왼쪽 위 */
+.effect:before {
+    box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+    top: -24px;
+    bottom: auto;
+    right: auto;
+    left: -26px;
+ 
+}
+/* 오른쪽 아래 */
+.effect:after {
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.7);
+    top: auto;
+    bottom: -22px;
+    right: -25px;
+    left: auto;
+}
+ 
+        </style>
+    </head>
+    
+    <body>
+            <header>
+                    <ul>
+                        <h1><em>Nupdoong</em></h1>
+                    </ul>
+            </header>
+ 
+            <article>
+                <section>
+                <h1>검색결과</h1>
+                <div class = "effect">
+                    <img src=<%= img %>  height = '200' width = '200'>
+                </div>
+                    <h3>아이디 : <%= id %></h3>
+                    <h3>이름 : <%= name %></h3>
+                    <h3>전화번호 : <%= phone %></h3>
+                    <form method="post" action="/addF"> 
+                    <input type = "submit" class = "button" value="팔로우" name="">
+                    </form>
+                    <form method="post" action="/delF"> 
+                    <input type = "submit" class = "button" value="팔로우 끊기" name="">
+                    </form>
+                </section>
+            </article>
+        
+        <aside>
+                <h3></h3>
+                <div class = "text">
+                        <ul>
+                                <li>경기도 수원시 팔달구 영통구 월드컵로 206</li>
+                                <li>집중교육2</li>
+                                <li>기석범, 박주원, 박준민, 이가영</li>
+                            </ul>
+                </div>
+                    
+                </aside>
+                <footer>
+                    <p>Copyright Nupdoung Team of AJou university</p>
+                </footer>
+    </body>
+</html>

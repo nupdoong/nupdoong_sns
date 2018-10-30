@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>First Page</title>
+    </head>
+    <body>
+        <form action="/first" method = "post">
+            <h1>회원가입</h1>
+        <br>
+        <table>
+            <label>id</label>
+            <input type ="txt" name="join_id">
+            <br>
+            <label>password</label>
+            <input type ="password" name="join_password">
+            <br>
+            <label>phone</label>
+            <input type ="txt" name="phone">
+            <br>
+            <label>name</label>
+            <input type ="txt" name="name">
+        </table>
+            <input type="submit" value="회원가입" name="Join">
+        </form>
+        <form action="/login" method="post">
+            <h1>로그인</h1>
+        <br>
+        <table>
+            <label>id</label>
+            <input type ="txt" name="login_id">
+            <br>
+            <label>password</label>
+            <input type ="password" name="login_password">
+        </table>
+            <input type="submit" value="로그인" name="Login">
+        </form>
+    </body>
+</html>
